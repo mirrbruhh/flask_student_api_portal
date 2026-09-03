@@ -111,4 +111,4 @@ This app is configured for immediate deployment on Render.
 Want to see the database in action? Drop a message directly into the live app's [Feedback page](https://flask-student-api-portal.onrender.com/feedback).
 
 For professional inquiries or discussions around software architecture and space tech, feel free to reach out:
-* [**My LinkedIn Profile**](www.linkedin.com/in/mihir-satra-b8599b389)
+* [**My LinkedIn Profile**](https://www.linkedin.com/in/mihir-satra-b8599b389)
