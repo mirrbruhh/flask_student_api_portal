@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container">
+  <h1>Welcome to the Flask Student API Portal</h1>
+     <p>This is an upgraded, production-ready version of the final project from the "30 Days of Python" challenge.</p>
+     <p>I expanded the original exercise to include a full CRUD REST API, and built in custom input validation, spam protection, and automated data cleanup to handle real-world web traffic safely.</p>
+     <p>This project is built and deployed using the following stack :</p>
+  <ul class="tech-lists">
+   {% for tech in techs %}
+   <li class="tech">{{ tech }}</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}

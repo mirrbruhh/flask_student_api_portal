@@ -1,0 +1,217 @@
+/* ---------- Fonts ---------- */
+@font-face {
+font-family: 'Inter';
+src: url('/static/fonts/inter-400.woff2') format('woff2');
+font-weight: 400;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Inter';
+src: url('/static/fonts/inter-500.woff2') format('woff2');
+font-weight: 500;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Inter';
+src: url('/static/fonts/inter-600.woff2') format('woff2');
+font-weight: 600;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Poppins';
+src: url('/static/fonts/poppins-600.woff2') format('woff2');
+font-weight: 600;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Poppins';
+src: url('/static/fonts/poppins-700.woff2') format('woff2');
+font-weight: 700;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Poppins';
+src: url('/static/fonts/poppins-800.woff2') format('woff2');
+font-weight: 800;
+font-style: normal;
+font-display: swap;
+}
+
+/* ---------- Design tokens ---------- */
+:root {
+--color-primary: #059669;
+--color-primary-dark: #065f46;
+--color-accent: #14b8a6;
+--color-bg: #f8fafc;
+--color-surface: #ffffff;
+--color-text: #1e293b;
+--color-text-muted: #64748b;
+--color-border: #e2e8f0;
+--radius: 10px;
+--shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+* { box-sizing: border-box; }
+body {
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+margin: 0;
+color: var(--color-text);
+background: var(--color-bg);
+line-height: 1.6;
+}
+h1, h2, h3 {
+font-family: 'Poppins', 'Inter', sans-serif;
+font-weight: 700;
+color: #0f172a;
+line-height: 1.25;
+}
+h1 { font-size: 2rem; margin: 0 0 12px; }
+h2 { font-size: 1.35rem; margin: 32px 0 12px; }
+h3 { font-size: 1.05rem; margin: 20px 0 8px; }
+p { margin: 0 0 16px; color: var(--color-text-muted); }
+a { color: var(--color-primary); }
+
+/* ---------- Header / nav ---------- */
+header {
+background: linear-gradient(135deg, #1b2a4a, #059669);
+padding: 18px 32px;
+display: flex;
+gap: 4px;
+box-shadow: var(--shadow);
+}
+.nav-link {
+color: rgba(255, 255, 255, 0.88);
+text-decoration: none;
+font-weight: 500;
+font-size: 0.95rem;
+padding: 8px 14px;
+border-radius: 999px;
+margin-right: 4px;
+transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-link:hover { background: rgba(255, 255, 255, 0.15); color: #ffffff; }
+main { padding: 40px 0 64px; }
+.container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Tech pill list (Home page) ---------- */
+.tech-lists {
+list-style: none;
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+padding: 0;
+margin: 20px 0;
+}
+.tech {
+background: var(--color-surface);
+border: 1px solid var(--color-border);
+color: var(--color-primary-dark);
+font-weight: 600;
+font-size: 0.9rem;
+padding: 8px 16px;
+border-radius: 999px;
+box-shadow: var(--shadow);
+}
+
+/* ---------- Forms (Join, Text Analyzer, Feedback) ---------- */
+form {
+background: var(--color-surface);
+border: 1px solid var(--color-border);
+border-radius: var(--radius);
+padding: 24px;
+box-shadow: var(--shadow);
+margin: 20px 0;
+}
+label {
+display: block;
+font-weight: 500;
+font-size: 0.9rem;
+color: var(--color-text);
+margin: 14px 0 6px;
+}
+label:first-child { margin-top: 0; }
+input[type="text"], input:not([type]), textarea {
+width: 100%;
+font-family: inherit;
+font-size: 0.95rem;
+padding: 10px 12px;
+border: 1px solid var(--color-border);
+border-radius: 8px;
+background: #f8fafc;
+color: var(--color-text);
+transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: var(--color-primary);
+box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+background: #fff;
+}
+textarea { resize: vertical; min-height: 120px; }
+button, input[type="submit"] {
+font-family: 'Inter', sans-serif;
+font-weight: 600;
+font-size: 0.95rem;
+background: var(--color-primary);
+color: white;
+border: none;
+padding: 10px 22px;
+border-radius: 8px;
+cursor: pointer;
+margin-top: 16px;
+transition: background 0.15s ease, transform 0.1s ease;
+}
+button:hover, input[type="submit"]:hover { background: var(--color-primary-dark); }
+button:active, input[type="submit"]:active { transform: translateY(1px); }
+
+/* ---------- Students table ---------- */
+.table-wrap {
+background: var(--color-surface);
+border: 1px solid var(--color-border);
+border-radius: var(--radius);
+overflow: hidden;
+box-shadow: var(--shadow);
+margin: 20px 0;
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+thead th {
+background: var(--color-primary);
+color: white;
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+text-align: left;
+padding: 14px 18px;
+}
+tbody td {
+padding: 12px 18px;
+border-top: 1px solid var(--color-border);
+color: var(--color-text);
+}
+tbody tr:nth-child(even) { background: #f8fafc; }
+tbody tr:hover { background: #ecfdf5; }
+
+/* ---------- Feedback list ---------- */
+ul.feedback-list { list-style: none; padding: 0; margin: 16px 0; }
+ul.feedback-list li {
+background: var(--color-surface);
+border: 1px solid var(--color-border);
+border-radius: 8px;
+padding: 12px 16px;
+margin-bottom: 10px;
+box-shadow: var(--shadow);
+}
+
+/* ---------- Result block (Text Analyzer) ---------- */
+.result-box {
+background: #ecfdf5;
+border: 1px solid #a7f3d0;
+border-radius: var(--radius);
+padding: 20px 24px;
+margin-top: 20px;
+}
+.result-box h2 { margin-top: 0; }
+.result-box ul { padding-left: 20px; margin: 8px 0 0; }

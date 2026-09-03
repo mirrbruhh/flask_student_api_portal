@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  {% if title %}
+  <title>30 Days of Python - {{ title }}</title>
+  {% else %}
+  <title>30 Days of Python</title>
+  {% endif %}
+ </head>
+
+ <body>
+  <header>
+    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+    <a class="nav-link" href="{{ url_for('students_page') }}">Students</a>
+    <a class="nav-link" href="{{ url_for('join_page') }}">Join</a>
+    <a class="nav-link" href="{{ url_for('text_analyzer') }}">Text Analyzer</a>
+    <a class="nav-link" href="{{ url_for('feedback_page') }}">Feedbacks</a>
+  </header>
+  <main>
+    {% block content %} {% endblock %}
+  </main>
+ </body>
+</html>

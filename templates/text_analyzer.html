@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Text Analyzer</h1>
+    <p>This tool analyzes any text you provide. It counts the total number of words and characters, 
+       and identifies the three most frequently used words. 
+       Paste or type your text below and click "Process Text".</p>
+    <form method="POST" action="{{ url_for('text_analyzer') }}">
+      <textarea name="text" rows="10" autofocus>{{ text or '' }}</textarea><br>
+      <input type="submit" value="Process Text" />
+    </form>
+  {% if most_common %}
+   <div class="result-box">
+        <h2>Result</h2>
+        <p>Word count: {{ word_count }}</p>
+        <p>Character count: {{ char_count }}</p>
+        <h3>Most frequent words</h3>
+        <ul>
+            {% for word, count in most_common %}
+            <li>{{ word }} : {{ count }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+   {% endif %}
+</div>
+{% endblock %}

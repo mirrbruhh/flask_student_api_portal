@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h1>Feedbacks</h1>
+  {% if error %}
+  <p style="color:red; font-weight:bold;">{{ error }}</p>
+  {% endif %}
+  <form method="POST" action="{{ url_for('feedback_page') }}">
+    <input type="text" name="honeypot" style="display:none;" tabindex="-1" />
+    <label>Name: <input name="name" required></label><br>
+    <label>Message: <textarea name="message" required></textarea></label><br>
+    <button type="submit">Submit</button>
+  </form>
+  <h2>What people said</h2>
+  <ul class ="feedback-list">
+    {% for fb in feedbacks %}
+    <li><strong>{{ fb.name }}</strong>: {{ fb.message }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

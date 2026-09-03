@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container">
+    <h1>ABOUT THIS PROJECT</h1>
+    <p>This portal was built to bridge the gap between basic Flask routing and actual production deployment. Instead of just accepting any data, the backend actively filters, limits, and manages what comes in.</p>
+    <p>Here are the key security and lifecycle features I added to the original challenge:</p>
+    <ul>
+        <li><strong>Rate Limiting:</strong> Caps form submissions and API requests to 5 per hour to prevent endpoint spam.</li>
+        <li><strong>Auto-Cleanup:</strong> Uses MongoDB TTL indexes to automatically delete student and feedback records after 30 days.</li>
+        <li><strong>Content Filters:</strong> Runs backend regex and profanity checks to block promotional links and inappropriate language.</li>
+        <li><strong>Bot Protection:</strong> Uses a hidden CSS honeypot field to quietly trap and reject automated scraping bots.</li>
+    </ul>
+</div>
+{% endblock %}
