@@ -6,11 +6,9 @@ I built this project to bridge the gap between a basic local Flask script and a 
 
 ## Live Demo
 
-The application is deployed on Render and accessible here:
+The application is deployed on Render and accessible here: [**View Live Site**](https://flask-student-api-portal.onrender.com/)
 
-[**View Live Site**](https://your-app-name.onrender.com)
-
-> Note: This is hosted on Render's free tier. If the site has not been visited in a while, it may take about 30 seconds to wake up.
+> Note: This is hosted on Render's free tier. If the site has not been visited in a while, it may take about 60 seconds to wake up.
 
 
 ## Why rebuild the original tutorial?
@@ -60,16 +58,16 @@ The application serves a REST API at `/api/v1.0/students`.
 
 | Application Views | Security in Action |
 | :--- | :--- |
-| <img src="screenshots/home.png" width="400"><br>Clean, responsive UI. | <img src="screenshots/profanity_filter.png" width="400"><br>Backend rejecting bad inputs. |
-| <img src="screenshots/students.png" width="400"><br>Data pulled live from MongoDB. | <img src="screenshots/rate_limiter.png" width="400"><br>Flask-Limiter blocking spam. |
-| <img src="screenshots/text_analyzer.png" width="400"><br>Python processing text inputs. | <img src="screenshots/postman_api.png" width="400"><br>Testing the secured DELETE route. |
+| <img src="screenshots/home.png" width="800"><br>Clean, responsive UI. | <img src="screenshots/profanity_filter.png" width="800"><br>Backend rejecting bad inputs. |
+| <img src="screenshots/students.png" width="800"><br>Data pulled live from MongoDB. | <img src="screenshots/rate_limiter.png" width="800"><br>Flask-Limiter blocking spam. |
+| <img src="screenshots/text_analyzer.png" width="800"><br>Python processing text inputs. | <img src="screenshots/postman_api.png" width="800"><br>Testing the secured DELETE route. |
 
 ## Local Setup Instructions
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/flask-student-api-portal.git
-   cd flask-student-api-portal
+   git clone https://github.com/mirrbruhh/flask_student_api_portal.git
+   cd flask_student_api_portal
    ```
 
 2. **Create a virtual environment and install dependencies**
@@ -90,7 +88,7 @@ The application serves a REST API at `/api/v1.0/students`.
    ```bash
    python app.py
    ```
-   Visit `http://127.0.0.1:5000` in your browser.
+   Visit `http://127.0.0.1:8000` in your browser.
 
 ## Deployment Notes (Render)
 
@@ -105,22 +103,12 @@ This app is configured for immediate deployment on Render.
 * **In-Memory Rate Limiting:** The rate limiter currently uses memory storage. If deployed across multiple worker nodes, a Redis backend would need to be swapped in to sync the limits.
 * **Static Filtering:** The profanity list is loaded into memory on startup via environment variables. Updating the blocked words requires a quick server restart.
 
-***
 
-### Notes for you before you upload:
-1. Make sure you actually create a folder called `screenshots` in your project.
-2. Take the screenshots, name them exactly as they are listed in the table above (e.g., `home.png`, `postman_api.png`), and put them in that folder. GitHub will automatically display them in the grid!
-3. Don't forget to swap out `your-app-name` and `your-username` in the links at the top.
 
 
 ## Contact & Feedback
 
-Want to see the database in action? Drop a message directly into the live app's [Feedback page](link-to-your-render-feedback-page-here).
+Want to see the database in action? Drop a message directly into the live app's [Feedback page](https://flask-student-api-portal.onrender.com/feedback).
 
 For professional inquiries or discussions around software architecture and space tech, feel free to reach out:
-* **LinkedIn:** [Mihir Satra](link-to-your-linkedin-url)
-```
-
-***
-
-**You are fully cleared for launch.** Put this in, run your deployment, take those screenshots, and close out this project so you can dive into OrbitWatch!
+* [**My LinkedIn Profile**](www.linkedin.com/in/mihir-satra-b8599b389)
