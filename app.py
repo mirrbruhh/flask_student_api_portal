@@ -31,7 +31,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # 1. Avoiding the Render Proxy IP issue
-app.wsgi_app = ProxyFix(app.wsgi_app, x_for=2, x_proto=1, x_host=1, x_prefix=1)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=3, x_proto=1, x_host=1, x_prefix=1)
 
 # 2. Prevents a crash if Render environment variable is missing
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY") or os.urandom(24)
