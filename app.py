@@ -36,10 +36,18 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
 # 2. Prevents a crash if Render environment variable is missing
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY") or os.urandom(24)
 
-# 3. Prevents memory DoS attacks (caps incoming data at 2 Megabytes)
+# 3. Prevents memory DDoS attacks (caps incoming data at 2 Megabytes)
 app.config["MAX_CONTENT_LENGTH"] = 2 * 1024 * 1024
 
-limiter = Limiter(key_func=get_remote_address)
+# Setting up the limiter and tell it to use that link to store IPs on our MongoDB server
+# So as to correctly enforce rate-limiter
+LIMITER_DB_LINK = os.environ.get("MONGODB_URI")
+
+limiter = Limiter(
+    key_func=get_remote_address,
+    storage_uri=LIMITER_DB_LINK,
+    strategy="fixed-window"
+)
 limiter.init_app(app)
 
 # Creating TTL indexes to auto-delete entries older than 30 days (30 days = 2592000 seconds)
